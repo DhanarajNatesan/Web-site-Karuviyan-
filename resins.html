@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>3D Printing Resins - KARUVIYAN Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="3d-printing.css">
+    <link rel="stylesheet" href="resins.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <img src="photos/logo.png" alt="KARUVIYAN Logo" class="nav-logo-img">
+                    <div class="brand-text">
+                        <h2>KARUVIYAN</h2>
+                        <span class="brand-tagline">Innovations LLP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#about" class="nav-link dropdown-toggle">
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-eye"></i>
+                                <span>Vision</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link dropdown-toggle active">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-flask"></i>
+                                <span>R&D</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>SPM</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                <span>Industrial Automations</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-dolly"></i>
+                                <span>Industrial Trolleys</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-hammer"></i>
+                                <span>Fabrications</span>
+                            </a>
+                            <a href="3d-printing.html" class="dropdown-link">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Printing</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-laser"></i>
+                                <span>Laser Engraving</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Designing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#customers" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                    
+                    <a href="index.html#projects" class="nav-link">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                    
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    
+                    <a href="index.html#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="3d-printing.html">3D Printing</a></li>
+                <li class="active">Resins</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="resins-hero">
+        <div class="hero-background">
+            <div class="liquid-animation">
+                <div class="resin-vat"></div>
+                <div class="liquid-waves"></div>
+                <div class="uv-light"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">High-Performance Resins for Precision Printing</h1>
+            <p class="hero-subtitle">
+                Professional-grade photopolymer resins for SLA/DLP 3D printing with exceptional detail, 
+                durability, and specialized properties for every application.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Resin Types</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">0.01mm</span>
+                    <span class="stat-label">Layer Precision</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">405nm</span>
+                    <span class="stat-label">UV Wavelength</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resins Grid -->
+    <section class="resins-grid-section">
+        <div class="resins-container">
+            <div class="section-header">
+                <h2>Choose Your Perfect Resin</h2>
+                <p>From standard to specialty formulations for every application</p>
+            </div>
+            
+            <div class="resins-grid">
+                <!-- Standard Resin -->
+                <div class="resin-card standard">
+                    <div class="card-liquid">
+                        <div class="liquid-sample standard-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Standard Resin</h3>
+                        <p>General-purpose resin perfect for prototypes and detailed models</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Cure Time:</span>
+                                <span class="value">1.5-3s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Shore D:</span>
+                                <span class="value">82-85</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Shrinkage:</span>
+                                <span class="value">2.5-4%</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Prototyping</span>
+                            <span class="app-tag">Miniatures</span>
+                            <span class="app-tag">Art & Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABS-like Resin -->
+                <div class="resin-card abs-like">
+                    <div class="card-liquid">
+                        <div class="liquid-sample abs-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>ABS-like Resin</h3>
+                        <p>Tough and durable resin with ABS-like mechanical properties</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Cure Time:</span>
+                                <span class="value">2-4s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Tensile Strength:</span>
+                                <span class="value">65 MPa</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Impact Resistance:</span>
+                                <span class="value">High</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Functional Parts</span>
+                            <span class="app-tag">Enclosures</span>
+                            <span class="app-tag">Automotive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flexible Resin -->
+                <div class="resin-card flexible">
+                    <div class="card-liquid">
+                        <div class="liquid-sample flexible-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Flexible Resin</h3>
+                        <p>Rubber-like flexible resin for gaskets and elastic components</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Shore A:</span>
+                                <span class="value">40-50</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Elongation:</span>
+                                <span class="value">130%</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Recovery:</span>
+                                <span class="value">95%</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Gaskets</span>
+                            <span class="app-tag">Wearables</span>
+                            <span class="app-tag">Soft Touch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Water-Washable Resin -->
+                <div class="resin-card water-washable">
+                    <div class="card-liquid">
+                        <div class="liquid-sample water-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Water-Washable</h3>
+                        <p>Eco-friendly resin that cleans with water instead of alcohol</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Cleaning:</span>
+                                <span class="value">Water Only</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Cure Time:</span>
+                                <span class="value">2-3s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">VOC:</span>
+                                <span class="value">Low</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Home Use</span>
+                            <span class="app-tag">Education</span>
+                            <span class="app-tag">Safe Handling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High Detail Resin -->
+                <div class="resin-card high-detail">
+                    <div class="card-liquid">
+                        <div class="liquid-sample detail-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>High-Detail Resin</h3>
+                        <p>Ultra-fine detail resin for miniatures and precision applications</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Resolution:</span>
+                                <span class="value">0.01mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Viscosity:</span>
+                                <span class="value">Low</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Detail:</span>
+                                <span class="value">Ultra-Fine</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Miniatures</span>
+                            <span class="app-tag">Jewelry</span>
+                            <span class="app-tag">Dental</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transparent Resin -->
+                <div class="resin-card transparent">
+                    <div class="card-liquid">
+                        <div class="liquid-sample transparent-liquid">
+                            <div class="liquid-ripple"></div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Crystal Clear</h3>
+                        <p>Ultra-transparent resin for optical and display applications</p>
+                        <div class="resin-specs">
+                            <div class="spec">
+                                <span class="label">Transparency:</span>
+                                <span class="value">95%</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Refractive Index:</span>
+                                <span class="value">1.52</span>
+                            </div>
+                            <div class="spec">
+                                <span class="label">Clarity:</span>
+                                <span class="value">Glass-like</span>
+                            </div>
+                        </div>
+                        <div class="applications">
+                            <span class="app-tag">Optics</span>
+                            <span class="app-tag">Displays</span>
+                            <span class="app-tag">Lenses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Handling -->
+    <section class="safety-section">
+        <div class="safety-container">
+            <div class="section-header">
+                <h2>Safety & Handling Guidelines</h2>
+                <p>Proper handling ensures best results and personal safety</p>
+            </div>
+            
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <div class="safety-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Personal Protection</h3>
+                    <ul>
+                        <li>Always wear nitrile gloves</li>
+                        <li>Use safety glasses</li>
+                        <li>Ensure good ventilation</li>
+                        <li>Avoid skin contact</li>
+                    </ul>
+                </div>
+
+                <div class="safety-item">
+                    <div class="safety-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Storage Conditions</h3>
+                    <ul>
+                        <li>Store in dark, cool place</li>
+                        <li>Temperature: 15-25°C</li>
+                        <li>Keep containers sealed</li>
+                        <li>Avoid UV exposure</li>
+                    </ul>
+                </div>
+
+                <div class="safety-item">
+                    <div class="safety-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>Disposal Guidelines</h3>
+                    <ul>
+                        <li>Cure waste resin before disposal</li>
+                        <li>Follow local regulations</li>
+                        <li>Use UV light for curing</li>
+                        <li>Recycle containers when possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Next Project?</h2>
+                <p>Get expert recommendations and technical support for your resin printing needs</p>
+                <div class="cta-buttons">
+                    <a href="index.html#contact" class="cta-btn primary">
+                        <i class="fas fa-flask"></i>
+                        <span>Request Sample</span>
+                    </a>
+                    <a href="tel:+919488590139" class="cta-btn secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Technical Support</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KARUVIYAN</span>
+                <p class="footer-tagline">Empowering Innovation</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#customers">Customers</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="mailto:karuvi.iyan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KARUVIYAN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="3d-printing.js"></script>
+    <script src="resins.js"></script>
+</body>
+</html>

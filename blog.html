@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Blog - KARUVIYAN Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Enhanced Blog Page Specific Styles */
+        .blog-page-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-page-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="blog-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23blog-grid)"/></svg>');
+            opacity: 0.3;
+            pointer-events: none;
+            animation: backgroundFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Floating Elements */
+        .floating-blog-elements {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .blog-float {
+            position: absolute;
+            opacity: 0.1;
+            animation: blogFloat 15s infinite ease-in-out;
+        }
+
+        .blog-float-1 {
+            top: 10%;
+            left: 15%;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .blog-float-2 {
+            top: 20%;
+            right: 20%;
+            width: 40px;
+            height: 40px;
+            background: white;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation-delay: 3s;
+        }
+
+        .blog-float-3 {
+            bottom: 30%;
+            left: 10%;
+            width: 50px;
+            height: 50px;
+            background: white;
+            transform: rotate(45deg);
+            animation-delay: 6s;
+        }
+
+        .blog-float-4 {
+            bottom: 15%;
+            right: 15%;
+            width: 35px;
+            height: 35px;
+            background: white;
+            border-radius: 50%;
+            animation-delay: 9s;
+        }
+
+        @keyframes blogFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            25% { transform: translateY(-20px) rotate(90deg); opacity: 0.2; }
+            50% { transform: translateY(-40px) rotate(180deg); opacity: 0.1; }
+            75% { transform: translateY(-20px) rotate(270deg); opacity: 0.15; }
+        }
+
+        /* Hero Section */
+        .blog-hero-new {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .blog-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            animation: heroGlow 3s ease-in-out infinite alternate;
+            transition: all 0.3s ease;
+        }
+
+        .blog-hero-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes heroGlow {
+            0% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.3); }
+            100% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); }
+        }
+
+        .blog-hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff, #ffd700, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes titleShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .blog-hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Search Section */
+        .blog-search-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            animation: searchFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes searchFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .blog-search-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6C55F9;
+            z-index: 2;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+            border: none;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            font-size: 1rem;
+            color: #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-input-wrapper input:focus {
+            outline: none;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(108, 85, 249, 0.3);
+        }
+
+        .category-filter-new {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: rgba(255, 255, 255, 0.9);
+            color: #6C55F9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Blog Content Section */
+        .blog-content-section {
+            background: white;
+            position: relative;
+            z-index: 2;
+            padding: 6rem 2rem;
+            margin-top: -2rem;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .blog-content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Featured Article */
+        .featured-article-new {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            box-shadow: 0 20px 60px rgba(108, 85, 249, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .featured-article-new:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(108, 85, 249, 0.2);
+        }
+
+        .featured-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 400px;
+        }
+
+        .featured-image-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, #6C55F9, #8B7CF6);
+        }
+
+        .featured-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            opacity: 0.9;
+        }
+
+        .featured-article-new:hover .featured-image-container img {
+            transform: scale(1.1);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(108, 85, 249, 0.7), rgba(139, 124, 246, 0.5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .featured-article-new:hover .featured-overlay {
+            opacity: 1;
+        }
+
+        .featured-play-btn {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6C55F9;
+            font-size: 1.5rem;
+            animation: playPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes playPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .featured-text-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #6C55F9, #8B7CF6);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .featured-meta i {
+            color: #6C55F9;
+        }
+
+        .featured-read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #6C55F9, #8B7CF6);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .featured-read-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(108, 85, 249, 0.4);
+        }
+
+        /* Blog Grid */
+        .blog-grid-new {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card-new {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(108, 85, 249, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardReveal 0.8s ease-out forwards;
+        }
+
+        .blog-card-new:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card-new:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card-new:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card-new:nth-child(4) { animation-delay: 0.4s; }
+        .blog-card-new:nth-child(5) { animation-delay: 0.5s; }
+        .blog-card-new:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes cardReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog-card-new:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(108, 85, 249, 0.15);
+        }
+
+        .card-image-new {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(45deg, #f8f9ff, #e8ecff);
+        }
+
+        .card-image-new img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .blog-card-new:hover .card-image-new img {
+            transform: scale(1.1);
+        }
+
+        .card-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(108, 85, 249, 0.8), rgba(139, 124, 246, 0.6));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-card-new:hover .card-image-overlay {
+            opacity: 1;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .card-action-btn {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card-action-btn:hover {
+            background: white;
+            color: #6C55F9;
+            transform: scale(1.1);
+        }
+
+        .card-content-new {
+            padding: 2rem;
+        }
+
+        .card-category-new {
+            display: inline-block;
+            background: linear-gradient(135deg, #6C55F9, #8B7CF6);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title-new {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card-new:hover .card-title-new {
+            color: #6C55F9;
+        }
+
+        .card-excerpt-new {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer-new {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .card-author-new {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar-new {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #6C55F9;
+        }
+
+        .author-avatar-new img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info-new {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name-new {
+            font-weight: 600;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .author-date-new {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .card-engagement-new {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .engagement-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #666;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .engagement-item:hover {
+            color: #6C55F9;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section-new {
+            background: linear-gradient(135deg, #6C55F9 0%, #8B7CF6 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-container-new {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form-new {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            color: #333;
+        }
+
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background: white;
+            color: #6C55F9;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .blog-hero-title { font-size: 3rem; }
+            .featured-content-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero-title { font-size: 2.5rem; }
+            .blog-search-container { flex-direction: column; }
+            .search-input-wrapper { min-width: unset; }
+            .featured-text-content { padding: 2rem; }
+            .blog-grid-new { grid-template-columns: 1fr; }
+            .newsletter-form-new { flex-direction: column; }
+
+            /* Mobile Navigation Styles */
+            .nav-container {
+                padding: 0 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+            
+            .nav-center {
+                display: none;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 2rem 1.5rem;
+                border-radius: 0;
+                border: none;
+                box-shadow: 0 10px 40px rgba(108, 85, 249, 0.2);
+                transform: translateY(-100vh);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 9999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-link {
+                width: 100%;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                margin-bottom: 0.5rem;
+                justify-content: flex-start;
+                color: #333;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                transition: all 0.3s ease;
+            }
+
+            .nav-link:hover {
+                background: rgba(108, 85, 249, 0.1);
+                color: #6C55F9;
+            }
+            
+            .nav-logo-img {
+                height: 36px;
+                width: 36px;
+            }
+            
+            .brand-text h2 {
+                font-size: 1.4rem;
+            }
+            
+            .brand-tagline {
+                font-size: 0.7rem;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                background: rgba(108, 85, 249, 0.05);
+                box-shadow: none;
+                border: none;
+                border-radius: 8px;
+                margin: 0.5rem 0;
+                padding: 0.5rem;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                max-height: 400px;
+                padding: 1rem;
+            }
+            
+            .dropdown-link {
+                padding: 0.75rem 1rem;
+                border-radius: 6px;
+                margin-bottom: 0.25rem;
+                color: #666;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: all 0.3s ease;
+            }
+
+            .dropdown-link:hover {
+                background: rgba(108, 85, 249, 0.1);
+                color: #6C55F9;
+            }
+
+            /* Mobile Menu Toggle Button */
+            .mobile-menu-toggle {
+                display: flex !important;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                gap: 4px;
+            }
+
+            .mobile-menu-toggle span {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background: #333;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            /* Make sure nav-center is properly hidden on mobile */
+            .nav-center {
+                display: none !important;
+            }
+
+            /* Ensure nav-controls shows the mobile toggle */
+            .nav-controls {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .theme-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: rgba(108, 85, 249, 0.1);
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .theme-toggle:hover {
+                background: rgba(108, 85, 249, 0.2);
+                transform: scale(1.1);
+            }
+
+            /* Dark theme support for mobile */
+            [data-theme="dark"] .nav-menu {
+                background: rgba(26, 26, 46, 0.98);
+            }
+
+            [data-theme="dark"] .nav-link {
+                color: #eee;
+            }
+
+            [data-theme="dark"] .nav-link:hover {
+                background: rgba(139, 124, 246, 0.2);
+                color: #8B7CF6;
+            }
+
+            [data-theme="dark"] .mobile-menu-toggle span {
+                background: #eee;
+            }
+
+            [data-theme="dark"] .dropdown-link {
+                color: #ccc;
+            }
+
+            [data-theme="dark"] .dropdown-link:hover {
+                background: rgba(139, 124, 246, 0.2);
+                color: #8B7CF6;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero-new { padding: 6rem 1rem 3rem; }
+            .blog-hero-title { font-size: 2rem; }
+            .card-content-new { padding: 1.5rem; }
+        }
+
+        /* Mobile Navigation for all screen sizes below 1024px */
+        @media (max-width: 1024px) {
+            .nav-center {
+                display: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex !important;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 2rem 1.5rem;
+                border-radius: 0;
+                border: none;
+                box-shadow: 0 10px 40px rgba(108, 85, 249, 0.2);
+                transform: translateY(-100vh);
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 9999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (Same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <img src="photos/logo.png" alt="KARUVIYAN Logo" class="nav-logo-img">
+                    <div class="brand-text">
+                        <h2>KARUVIYAN</h2>
+                        <span class="brand-tagline">Innovatives LLP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#about" class="nav-link dropdown-toggle">
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-eye"></i>
+                                <span>Vision</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link dropdown-toggle">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-flask"></i>
+                                <span>R&D</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>SPM</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                <span>Industrial Automations</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-dolly"></i>
+                                <span>Industrial Trolleys</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-hammer"></i>
+                                <span>Fabrications</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Printing</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-laser"></i>
+                                <span>Laser Engraving</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Designing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#customers" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                    
+                    <a href="index.html#projects" class="nav-link">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                    
+                    <a href="blog.html" class="nav-link active">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    
+                    <a href="index.html#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Page Wrapper -->
+    <div class="blog-page-wrapper">
+        <!-- Floating Elements -->
+        <div class="floating-blog-elements">
+            <div class="blog-float blog-float-1"></div>
+            <div class="blog-float blog-float-2"></div>
+            <div class="blog-float blog-float-3"></div>
+            <div class="blog-float blog-float-4"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="blog-hero-new">
+            <div class="blog-hero-badge">
+                <i class="fas fa-blog"></i>
+                <span>Our Blog</span>
+            </div>
+            <h1 class="blog-hero-title">
+                Insights & <span style="color: #ffd700;">Innovations</span>
+            </h1>
+            <p class="blog-hero-subtitle">
+                Discover the latest trends, insights, and breakthrough innovations in technology, automation, and sustainable solutions that are shaping the future of our world.
+            </p>
+
+            <!-- Search & Filter Section -->
+            <div class="blog-search-section">
+                <div class="blog-search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search articles, topics, and innovations..." id="blog-search-new">
+                    </div>
+                    <div class="category-filter-new">
+                        <button class="category-btn active" data-category="all">All</button>
+                        <button class="category-btn" data-category="automation">Automation</button>
+                        <button class="category-btn" data-category="agritech">AgriTech</button>
+                        <button class="category-btn" data-category="healthcare">Healthcare</button>
+                        <button class="category-btn" data-category="energy">Clean Energy</button>
+                        <button class="category-btn" data-category="innovation">Innovation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content-section">
+        <div class="blog-content-container">
+            <!-- Featured Article -->
+            <div class="featured-article-new">
+                <div class="featured-content-grid">
+                    <div class="featured-image-container">
+                        <img src="photos/gt.jpg" alt="The Future of Automation" loading="lazy">
+                        <div class="featured-overlay">
+                            <div class="featured-play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-text-content">
+                        <span class="featured-category">Automation</span>
+                        <h2 class="featured-title">The Future of Industrial Automation: Transforming Manufacturing</h2>
+                        <p class="featured-excerpt">
+                            Explore how cutting-edge automation technologies are revolutionizing manufacturing processes, improving efficiency, and creating new opportunities for innovation in industrial settings.
+                        </p>
+                        <div class="featured-meta">
+                            <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                            <span><i class="fas fa-user"></i> KARUVIYAN Team</span>
+                        </div>
+                        <a href="#" class="featured-read-btn">
+                            <span>Read Full Article</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid-new">
+                <!-- Article 1 -->
+                <article class="blog-card-new" data-category="agritech">
+                    <div class="card-image-new">
+                        <img src="photos/award-2.jpg" alt="Smart Agriculture Solutions" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">AgriTech</span>
+                        <h3 class="card-title-new">Smart Agriculture: IoT Solutions for Sustainable Farming</h3>
+                        <p class="card-excerpt-new">Discover how IoT sensors and smart monitoring systems are helping farmers optimize crop yields while reducing environmental impact through precision agriculture techniques.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/vimal.avif" alt="Dr. Vimal Kumar">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">Dr. Vimal Kumar</span>
+                                    <span class="author-date-new">March 10, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>24</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>8</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card-new" data-category="healthcare">
+                    <div class="card-image-new">
+                        <img src="photos/award 1.jpg" alt="Healthcare Innovation" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">Healthcare</span>
+                        <h3 class="card-title-new">Revolutionary Healthcare Devices: Improving Patient Care</h3>
+                        <p class="card-excerpt-new">Explore the latest healthcare innovations that are transforming patient monitoring, treatment outcomes, and the overall healthcare experience through advanced medical technology.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/logo.png" alt="KARUVIYAN Team">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">Healthcare Team</span>
+                                    <span class="author-date-new">March 8, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>42</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>15</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card-new" data-category="energy">
+                    <div class="card-image-new">
+                        <img src="photos/gt.jpg" alt="Clean Energy Solutions" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">Clean Energy</span>
+                        <h3 class="card-title-new">Sustainable Energy: Building a Greener Tomorrow</h3>
+                        <p class="card-excerpt-new">Learn about the innovative clean energy solutions that are driving the transition to a sustainable future, including renewable energy technologies and energy storage systems.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/logo.png" alt="Energy Team">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">Energy Team</span>
+                                    <span class="author-date-new">March 5, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>36</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>12</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card-new" data-category="innovation">
+                    <div class="card-image-new">
+                        <img src="photos/award-2.jpg" alt="Innovation Culture" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">Innovation</span>
+                        <h3 class="card-title-new">Innovation Culture: Fostering Creative Problem-Solving</h3>
+                        <p class="card-excerpt-new">Discover the key principles and practices that drive innovation culture in technology companies and how to create an environment that encourages creative thinking.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/vimal.avif" alt="Innovation Team">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">Innovation Team</span>
+                                    <span class="author-date-new">March 3, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>28</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>6</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card-new" data-category="automation">
+                    <div class="card-image-new">
+                        <img src="photos/award 1.jpg" alt="Industrial Automation" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">Automation</span>
+                        <h3 class="card-title-new">Industrial Automation: Trends Shaping Manufacturing</h3>
+                        <p class="card-excerpt-new">Explore the latest trends in industrial automation and how they're transforming manufacturing processes, improving efficiency, and reducing operational costs.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/logo.png" alt="Automation Team">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">Automation Team</span>
+                                    <span class="author-date-new">March 1, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>52</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>18</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="blog-card-new" data-category="agritech">
+                    <div class="card-image-new">
+                        <img src="photos/gt.jpg" alt="Precision Agriculture" loading="lazy">
+                        <div class="card-image-overlay">
+                            <div class="card-actions">
+                                <button class="card-action-btn" title="Save Article">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <button class="card-action-btn" title="Share Article">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-new">
+                        <span class="card-category-new">AgriTech</span>
+                        <h3 class="card-title-new">Precision Agriculture: Data-Driven Farming Solutions</h3>
+                        <p class="card-excerpt-new">Learn how precision agriculture technologies are helping farmers make data-driven decisions, optimize resource usage, and increase crop productivity sustainably.</p>
+                        <div class="card-footer-new">
+                            <div class="card-author-new">
+                                <div class="author-avatar-new">
+                                    <img src="photos/vimal.avif" alt="AgriTech Team">
+                                </div>
+                                <div class="author-info-new">
+                                    <span class="author-name-new">AgriTech Team</span>
+                                    <span class="author-date-new">February 28, 2024</span>
+                                </div>
+                            </div>
+                            <div class="card-engagement-new">
+                                <span class="engagement-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>31</span>
+                                </span>
+                                <span class="engagement-item">
+                                    <i class="fas fa-comment"></i>
+                                    <span>9</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section-new">
+        <div class="newsletter-container-new">
+            <h2 class="newsletter-title">Stay Updated</h2>
+            <p class="newsletter-subtitle">Get the latest insights and innovations delivered directly to your inbox</p>
+            <form class="newsletter-form-new">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">
+                    <span>Subscribe</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KARUVIYAN</span>
+                <p class="footer-tagline">Empowering Innovation</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#customers">Customers</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="mailto:karuvi.iyan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KARUVIYAN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Enhanced Blog Page JavaScript
+        class EnhancedBlogPage {
+            constructor() {
+                this.searchInput = document.getElementById('blog-search-new');
+                this.categoryBtns = document.querySelectorAll('.category-btn');
+                this.blogCards = document.querySelectorAll('.blog-card-new');
+                this.currentFilter = 'all';
+                
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.initializeAnimations();
+            }
+
+            setupEventListeners() {
+                // Search functionality
+                this.searchInput.addEventListener('input', (e) => {
+                    this.filterArticles();
+                });
+
+                // Category filter
+                this.categoryBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.setActiveCategory(e.target.dataset.category);
+                        this.filterArticles();
+                    });
+                });
+
+                // Card interactions
+                this.blogCards.forEach(card => {
+                    this.setupCardInteractions(card);
+                });
+
+                // Newsletter form
+                const newsletterForm = document.querySelector('.newsletter-form-new');
+                if (newsletterForm) {
+                    newsletterForm.addEventListener('submit', this.handleNewsletterSubmit.bind(this));
+                }
+            }
+
+            setActiveCategory(category) {
+                this.currentFilter = category;
+                
+                this.categoryBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.category === category) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            filterArticles() {
+                const searchTerm = this.searchInput.value.toLowerCase();
+                
+                this.blogCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const title = card.querySelector('.card-title-new').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.card-excerpt-new').textContent.toLowerCase();
+                    
+                    const matchesCategory = this.currentFilter === 'all' || category === this.currentFilter;
+                    const matchesSearch = title.includes(searchTerm) || excerpt.includes(searchTerm);
+                    
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'block';
+                        card.style.animation = 'cardReveal 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            setupCardInteractions(card) {
+                // Bookmark functionality
+                const bookmarkBtn = card.querySelector('.card-action-btn[title="Save Article"]');
+                if (bookmarkBtn) {
+                    bookmarkBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleBookmark(bookmarkBtn);
+                    });
+                }
+
+                // Share functionality
+                const shareBtn = card.querySelector('.card-action-btn[title="Share Article"]');
+                if (shareBtn) {
+                    shareBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.shareArticle(card);
+                    });
+                }
+
+                // Like functionality
+                const likeBtn = card.querySelector('.engagement-item');
+                if (likeBtn) {
+                    likeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleLike(likeBtn);
+                    });
+                }
+            }
+
+            toggleBookmark(btn) {
+                const icon = btn.querySelector('i');
+                const isBookmarked = icon.classList.contains('fas');
+                
+                if (isBookmarked) {
+                    icon.className = 'far fa-bookmark';
+                    btn.style.color = 'white';
+                } else {
+                    icon.className = 'fas fa-bookmark';
+                    btn.style.color = '#ffd700';
+                }
+                
+                // Animation
+                btn.style.transform = 'scale(1.3)';
+                setTimeout(() => {
+                    btn.style.transform = 'scale(1)';
+                }, 200);
+
+                this.showNotification(isBookmarked ? 'Article removed from bookmarks' : 'Article bookmarked!', 'info');
+            }
+
+            shareArticle(card) {
+                const title = card.querySelector('.card-title-new').textContent;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: title,
+                        text: 'Check out this article from KARUVIYAN Innovations',
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback: copy to clipboard
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        this.showNotification('Article link copied to clipboard!', 'success');
+                    });
+                }
+            }
+
+            toggleLike(btn) {
+                const icon = btn.querySelector('i');
+                const countSpan = btn.querySelector('span');
+                const isLiked = icon.classList.contains('fas');
+                
+                let count = parseInt(countSpan.textContent);
+                
+                if (isLiked) {
+                    icon.className = 'far fa-heart';
+                    btn.style.color = '#666';
+                    count--;
+                } else {
+                    icon.className = 'fas fa-heart';
+                    btn.style.color = '#e74c3c';
+                    count++;
+                }
+                
+                countSpan.textContent = count;
+                
+                // Animation
+                btn.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    btn.style.transform = 'scale(1)';
+                }, 200);
+            }
+
+            handleNewsletterSubmit(e) {
+                e.preventDefault();
+                const email = e.target.querySelector('.newsletter-input').value;
+                
+                if (email) {
+                    this.showNotification('Thank you for subscribing! 🎉', 'success');
+                    e.target.reset();
+                } else {
+                    this.showNotification('Please enter a valid email address', 'error');
+                }
+            }
+
+            initializeAnimations() {
+                // Intersection Observer for animations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.animationPlayState = 'running';
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                // Observe all animated elements
+                document.querySelectorAll('.blog-card-new').forEach(card => {
+                    observer.observe(card);
+                });
+            }
+
+            showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `blog-notification ${type}`;
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    padding: 1rem 2rem;
+                    border-radius: 50px;
+                    color: white;
+                    font-weight: 600;
+                    z-index: 10000;
+                    animation: slideInRight 0.3s ease;
+                    background: ${type === 'success' ? 'linear-gradient(135deg, #4CAF50, #66BB6A)' : 
+                               type === 'info' ? 'linear-gradient(135deg, #2196F3, #42A5F5)' : 
+                               'linear-gradient(135deg, #f44336, #ef5350)'};
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                `;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new EnhancedBlogPage();
+        });
+
+        // Add custom animations CSS
+        const animationStyles = document.createElement('style');
+        animationStyles.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(animationStyles);
+    </script>
+</body>
+</html>

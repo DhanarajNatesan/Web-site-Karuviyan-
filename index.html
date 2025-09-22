@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>KARUVIYAN - Devising Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <img src="photos/logo.png" alt="KARUVIYAN Logo" class="nav-logo-img">
+                    <div class="brand-text">
+                        <h2>KARUVIYAN</h2>
+                        <span class="brand-tagline">Innovatives LLP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#about" class="dropdown-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="#about" class="dropdown-link">
+                                <i class="fas fa-eye"></i>
+                                <span>Vision</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-flask"></i>
+                                <span>R&D</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>SPM</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                <span>Industrial Automations</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-dolly"></i>
+                                <span>Industrial Trolleys</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-hammer"></i>
+                                <span>Fabrications</span>
+                            </a>
+                            <a href="3d-printing.html" class="dropdown-link">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Printing</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-laser"></i>
+                                <span>Laser Engraving</span>
+                            </a>
+                            <a href="#services" class="dropdown-link">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Designing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#customers" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                    
+                    <a href="#projects" class="nav-link">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                    
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    
+                    
+                    
+                    <a href="#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="home">
+        <!-- Background Video/Image -->
+        <div class="hero-background">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                <!-- Fallback background image -->
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Interactive Canvas Background -->
+        <canvas id="interactiveCanvas" class="interactive-canvas"></canvas>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">KARUVIYAN INNOVATIVES LLP</h1>
+                <p class="hero-subheadline">Ignite the most powerful ideas you have ever built for our people.</p>
+                <div class="hero-cta">
+                    <button class="cta-button secondary">Explore Services</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Interactive Elements -->
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-badge">About Us</div>
+                    <h2 class="about-title">A Looming Product Developers</h2>
+                    <p class="about-description">
+                        <b>MISSION</b><br>
+                        To ideate, design, and deliver eco-friendly, innovative solutions in automation, agrotech, and healthcare addressing real-world challenges and improving the quality of life for society.
+
+                        <br><br>
+                        <b>VISION</b><br>To become a global leader in sustainable product innovation, empowering communities with smart, practical, and socially responsible technologies that shape a healthier and more efficient future.         </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">70+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="about-visual">
+                    <div class="about-image-container">
+                        <div class="about-image">
+                            <img src="photos/logo1.png" alt="About Us" />
+                        </div>
+                        <div class="floating-card card-1">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-text">Innovation</div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">💡</div>
+                            <div class="card-text">Creativity</div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-text">Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section-modern" id="services">
+        <div class="services-modern-container">
+            <div class="services-modern-content">
+                <div class="services-modern-left">
+                    <div class="projects-badge">Our Services</div>
+                    <h2 class="services-title">Comprehensive Engineering & Industrial Services</h2>
+                    <p class="services-description">
+                        We offer end-to-end engineering solutions including R&D, SPM, industrial automation, trolleys, fabrications, 3D printing, laser engraving, and designing — delivering innovation, precision, and efficiency for every industry need.
+                    </p>
+                </div>
+                <div class="services-modern-right">
+                    <div class="services-cards-grid">
+                        <div class="service-modern-card">
+                            <div class="service-icon service-ideation">🖨️</div>
+                            <h3>Additive Services</h3>
+                            <p>Focus on 3D printing and layer-by-layer material deposition to create complex prototypes or parts with high precision, reduced waste, and faster turnaround times.</p>
+                        </div>
+                        <div class="service-modern-card">
+                            <div class="service-icon service-research">🏭</div>
+                            <h3>Manufacturing Services</h3>
+                            <p>Provide large-scale production of goods using machining, assembly, and automation techniques to ensure consistency, quality, and cost-effectiveness.</p>
+                        </div>
+                        <div class="service-modern-card">
+                            <div class="service-icon service-development">🧰</div>
+                            <h3>Fabrication Services</h3>
+                            <p>Specialize in cutting, welding, forming, and assembling raw materials like metals or composites into customized structures, equipment, or components.</p>
+                        </div>
+                        <div class="service-modern-card">
+                            <div class="service-icon service-manufacturing">🔬</div>
+                            <h3>R&D Services</h3>
+                            <p>Involve research, design, testing, and innovation to develop new products, improve existing ones, and integrate advanced technologies into manufacturing and fabrication.</p>
+                        </div>
+                    </div>
+                    <div class="services-bg-blob"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Section -->
+    <section id="customers" class="section customers-section">
+        <div class="customers-container">
+            <div class="customers-header">
+                <div class="customers-badge">Our Customers</div>
+                <p class="customers-description">
+                    <br>
+                    We take pride in partnering with a diverse range of customers across industries, delivering tailored solutions that meet their unique needs. Our commitment to quality, innovation, and reliability has earned us the trust of clients who value long-term collaboration and excellence.
+                </p>
+            </div>
+            
+            <div class="customers-grid">
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="TechCorp" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Rajesh K</h3>
+                        <p class="customer-category">TechCorp Industries</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-star"></i>
+                            <span>R&D Service</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="InnovateTech" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Vimal RV</h3>
+                        <p class="customer-category">InnovateTech Solutions</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-bolt"></i>
+                            <span>SPM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="GreenEnergy" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Denvor JR</h3>
+                        <p class="customer-category">GreenEnergy Corp</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-leaf"></i>
+                            <span>Industrial Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="AutoMotive" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Alfred Antony M</h3>
+                        <p class="customer-category">AutoMotive Dynamics</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-car"></i>
+                            <span>Fabrications</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="HealthTech" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Viswa J</h3>
+                        <p class="customer-category">ModernTech Innovations</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-heart"></i>
+                            <span>Laser Engraving</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="SmartFactory" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Kaushal C</h3>
+                        <p class="customer-category">HTE Solutions</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-microchip"></i>
+                            <span>Designing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="AeroSpace" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Sadhana KL</h3>
+                        <p class="customer-category">Barrier Solutions</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-rocket"></i>
+                            <span>Industrial Trolleys</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="customer-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="customer-logo">
+                        <img src="photos/logo.png" alt="BioTech" />
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-name">Saobin C</h3>
+                        <p class="customer-category">Cave Innovations</p>
+                    </div>
+                    <div class="customer-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-dna"></i>
+                            <span>3D Printing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Carousel for smaller screens -->
+            <div class="customers-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <div class="customer-card-mobile">
+                            <div class="customer-logo">
+                                <img src="photos/logo.png" alt="TechCorp" />
+                            </div>
+                            <h3 class="customer-name">TechCorp Industries</h3>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="customer-card-mobile">
+                            <div class="customer-logo">
+                                <img src="photos/logo.png" alt="InnovateTech" />
+                            </div>
+                            <h3 class="customer-name">InnovateTech Solutions</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-navigation">
+                    <button class="carousel-btn prev" id="customers-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="customers-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-dots" id="customers-dots"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section-modern">
+        <div class="projects-modern-container">
+            <div class="projects-modern-content">
+                <div class="projects-modern-left">
+                    <span class="projects-badge">Our Projects</span>
+                    <h2 class="projects-title">Innovative Solutions Delivered</h2>
+                    <p class="projects-description">
+                        We take pride in delivering cutting-edge projects that drive innovation and impact. Explore our portfolio of successful solutions, each crafted with expertise and passion.
+                    </p>
+                    <div class="projects-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Ongoing</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="projects-modern-right">
+                    <div class="projects-cards-grid">
+                        <div class="project-modern-card">
+                            <div class="project-icon"><img src="photos/project1.png" alt="Project Alpha" /></div>
+                            <h3>Project Alpha</h3>
+                            <p>Revolutionary automation system for smart manufacturing.</p>
+                        </div>
+                        <div class="project-modern-card">
+                            <div class="project-icon"><img src="photos/project2.png" alt="Project Beta" /></div>
+                            <h3>Project Beta</h3>
+                            <p>AI-powered analytics platform for real-time insights.</p>
+                        </div>
+                        <div class="project-modern-card">
+                            <div class="project-icon"><img src="photos/project3.png" alt="Project Gamma" /></div>
+                            <h3>Project Gamma</h3>
+                            <p>Smart IoT solution for seamless connectivity.</p>
+                        </div>
+                        <div class="project-modern-card">
+                            <div class="project-icon"><img src="photos/project4.png" alt="Project Delta" /></div>
+                            <h3>Project Delta</h3>
+                            <p>Cloud-based platform for scalable operations.</p>
+                        </div>
+                    </div>
+                    <div class="projects-bg-blob"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section-modern">
+        <div class="contact-modern-container">
+            <div class="contact-modern-content">
+                <div class="contact-modern-left">
+                    <span class="contact-badge">Contact Us</span>
+                    <h2 class="contact-title">Get In Touch</h2>
+                    <p class="contact-description">
+                        Reach out to us for collaborations, project inquiries, or just to say hello. We're here to help you innovate and grow.
+                    </p>
+                    <div class="contact-info-modern glass-card">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>karuvi.iyan@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+91 9488590139</p>
+                            <p>+91 7397619158</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>SF. No: 389, Thiyaki Murugaiyan Nagar, Nallukavalai Thottam, Kannampalayam,<br>Coimbatore - 641 402</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-modern-right">
+                    <form class="contact-form-modern glass-card" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="1234567890">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="cta-button cta-primary">Send Message</button>
+                    </form>
+                    <div class="contact-bg-blob"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KARUVIYAN</span>
+                <p class="footer-tagline">Empowering Innovation</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#customers">Customers</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="mailto:karuvi.iyan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KARUVIYAN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Services Carousel Logic (3D Rotational)
+    (function() {
+        const track = document.querySelector('.carousel-track');
+        const cards = Array.from(track.children);
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        const dotsNav = document.getElementById('carousel-dots');
+        const cardCount = cards.length;
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Create dots
+        function createDots() {
+            dotsNav.innerHTML = '';
+            for (let i = 0; i < cardCount; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsNav.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            Array.from(dotsNav.children).forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function updateCardPositions() {
+            cards.forEach((card, i) => {
+                let pos = i - currentIndex;
+                // For circular effect
+                if (pos > cardCount / 2) pos -= cardCount;
+                if (pos < -cardCount / 2) pos += cardCount;
+                card.setAttribute('data-pos', pos);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = (index + cardCount) % cardCount;
+            updateCardPositions();
+            updateDots();
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000);
+        }
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Responsive: update on resize
+        window.addEventListener('resize', () => goToSlide(currentIndex));
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+
+        // Init
+        createDots();
+        goToSlide(0);
+        startAutoSlide();
+    })();
+    </script>
+</body>
+</html>

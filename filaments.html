@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>3D Printing Filaments - KARUVIYAN Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="3d-printing.css">
+    <link rel="stylesheet" href="filaments.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <img src="photos/logo.png" alt="KARUVIYAN Logo" class="nav-logo-img">
+                    <div class="brand-text">
+                        <h2>KARUVIYAN</h2>
+                        <span class="brand-tagline">Innovations LLP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#about" class="nav-link dropdown-toggle">
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-eye"></i>
+                                <span>Vision</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link dropdown-toggle active">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-flask"></i>
+                                <span>R&D</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>SPM</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                <span>Industrial Automations</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-dolly"></i>
+                                <span>Industrial Trolleys</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-hammer"></i>
+                                <span>Fabrications</span>
+                            </a>
+                            <a href="3d-printing.html" class="dropdown-link">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Printing</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-laser"></i>
+                                <span>Laser Engraving</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Designing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#customers" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                    
+                    <a href="index.html#projects" class="nav-link">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                    
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    
+                    <a href="index.html#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="3d-printing.html">3D Printing</a></li>
+                <li class="active">Filaments</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="filaments-hero">
+        <div class="hero-background">
+            <div class="filament-animation">
+                <div class="filament-spool"></div>
+                <div class="filament-strand"></div>
+                <div class="extruder-tip"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Premium 3D Printing Filaments</h1>
+            <p class="hero-subtitle">
+                Discover our extensive collection of high-quality filaments for every application - 
+                from everyday prototyping to professional-grade production.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Filament Types</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Color Options</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Quality Grade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-header">
+                <h2>Find Your Perfect Filament</h2>
+                <p>Filter by material type, properties, or application</p>
+            </div>
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label>Material Type</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pla">PLA</button>
+                        <button class="filter-btn" data-filter="abs">ABS</button>
+                        <button class="filter-btn" data-filter="petg">PETG</button>
+                        <button class="filter-btn" data-filter="tpu">TPU</button>
+                        <button class="filter-btn" data-filter="specialty">Specialty</button>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Properties</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-property="flexible">Flexible</button>
+                        <button class="filter-btn" data-property="strong">High Strength</button>
+                        <button class="filter-btn" data-property="transparent">Transparent</button>
+                        <button class="filter-btn" data-property="conductive">Conductive</button>
+                        <button class="filter-btn" data-property="biodegradable">Eco-Friendly</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filaments Grid -->
+    <section class="filaments-grid-section">
+        <div class="filaments-container">
+            <div class="filaments-grid" id="filaments-grid">
+                
+                <!-- PLA Filaments -->
+                <div class="filament-card" data-category="pla" data-properties="biodegradable easy">
+                    <div class="card-image">
+                        <div class="filament-sample pla-sample"></div>
+                        <div class="card-badge">Most Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">PLA+ Premium</h3>
+                        <p class="card-description">Enhanced PLA with improved strength and heat resistance</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">190-220°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bed Temp:</span>
+                                <span class="spec-value">50-60°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diameter:</span>
+                                <span class="spec-value">1.75mm</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">Easy Print</span>
+                            <span class="feature-tag">Eco-Friendly</span>
+                            <span class="feature-tag">Low Odor</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABS Filaments -->
+                <div class="filament-card" data-category="abs" data-properties="strong heat-resistant">
+                    <div class="card-image">
+                        <div class="filament-sample abs-sample"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">ABS Professional</h3>
+                        <p class="card-description">Industrial-grade ABS for durable, heat-resistant parts</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">230-250°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bed Temp:</span>
+                                <span class="spec-value">80-100°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diameter:</span>
+                                <span class="spec-value">1.75mm</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">High Strength</span>
+                            <span class="feature-tag">Heat Resistant</span>
+                            <span class="feature-tag">Machinable</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PETG Filaments -->
+                <div class="filament-card" data-category="petg" data-properties="transparent strong">
+                    <div class="card-image">
+                        <div class="filament-sample petg-sample"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">PETG Crystal Clear</h3>
+                        <p class="card-description">Crystal clear PETG for transparent applications</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">220-250°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bed Temp:</span>
+                                <span class="spec-value">70-80°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diameter:</span>
+                                <span class="spec-value">1.75mm</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">Crystal Clear</span>
+                            <span class="feature-tag">Chemical Resistant</span>
+                            <span class="feature-tag">Easy Print</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TPU Filaments -->
+                <div class="filament-card" data-category="tpu" data-properties="flexible">
+                    <div class="card-image">
+                        <div class="filament-sample tpu-sample"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">TPU Flex 95A</h3>
+                        <p class="card-description">Flexible TPU for rubber-like prints and gaskets</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">200-230°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bed Temp:</span>
+                                <span class="spec-value">40-60°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Shore A:</span>
+                                <span class="spec-value">95A</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">Flexible</span>
+                            <span class="feature-tag">Elastic</span>
+                            <span class="feature-tag">Durable</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialty Filaments -->
+                <div class="filament-card" data-category="specialty" data-properties="conductive">
+                    <div class="card-image">
+                        <div class="filament-sample conductive-sample"></div>
+                        <div class="card-badge special">Specialty</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Conductive PLA</h3>
+                        <p class="card-description">Electrically conductive filament for electronic applications</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">190-220°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Resistance:</span>
+                                <span class="spec-value">115 Ω⋅cm</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Diameter:</span>
+                                <span class="spec-value">1.75mm</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">Conductive</span>
+                            <span class="feature-tag">Electronics</span>
+                            <span class="feature-tag">Sensors</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filament-card" data-category="specialty" data-properties="strong">
+                    <div class="card-image">
+                        <div class="filament-sample carbon-sample"></div>
+                        <div class="card-badge special">Professional</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Carbon Fiber PETG</h3>
+                        <p class="card-description">Carbon fiber reinforced PETG for ultra-strong parts</p>
+                        <div class="card-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Print Temp:</span>
+                                <span class="spec-value">240-260°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Bed Temp:</span>
+                                <span class="spec-value">80-90°C</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Strength:</span>
+                                <span class="spec-value">+300%</span>
+                            </div>
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-tag">Ultra Strong</span>
+                            <span class="feature-tag">Lightweight</span>
+                            <span class="feature-tag">Carbon Fiber</span>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-primary">View Details</button>
+                            <button class="btn-secondary">Request Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Support Section -->
+    <section class="support-section">
+        <div class="support-container">
+            <div class="support-content">
+                <h2>Need Help Choosing the Right Filament?</h2>
+                <p>Our technical experts are here to help you select the perfect material for your project</p>
+                <div class="support-features">
+                    <div class="support-item">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Expert Consultation</h3>
+                        <p>Get personalized recommendations from our material specialists</p>
+                    </div>
+                    <div class="support-item">
+                        <i class="fas fa-flask"></i>
+                        <h3>Material Testing</h3>
+                        <p>Request samples to test compatibility with your application</p>
+                    </div>
+                    <div class="support-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Print Settings</h3>
+                        <p>Optimized print profiles for all our filaments</p>
+                    </div>
+                </div>
+                <div class="support-actions">
+                    <a href="index.html#contact" class="btn-primary">Contact Expert</a>
+                    <a href="tel:+919488590139" class="btn-secondary">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KARUVIYAN</span>
+                <p class="footer-tagline">Empowering Innovation</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html#about">About</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#customers">Customers</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="mailto:karuvi.iyan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KARUVIYAN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="3d-printing.js"></script>
+    <script src="filaments.js"></script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6C55F9">
+    <title>3D Printing Services - KARUVIYAN Innovations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="3d-printing.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="nav-logo">
+                    <img src="photos/logo.png" alt="KARUVIYAN Logo" class="nav-logo-img">
+                    <div class="brand-text">
+                        <h2>KARUVIYAN</h2>
+                        <span class="brand-tagline">Innovations LLP</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <div class="nav-menu" id="nav-menu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-house"></i>
+                        <span>Home</span>
+                    </a>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#about" class="nav-link dropdown-toggle">
+                            <i class="fas fa-circle-info"></i>
+                            <span>About</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Mission</span>
+                            </a>
+                            <a href="index.html#about" class="dropdown-link">
+                                <i class="fas fa-eye"></i>
+                                <span>Vision</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link dropdown-toggle active">
+                            <i class="fas fa-screwdriver-wrench"></i>
+                            <span>Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-flask"></i>
+                                <span>R&D</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                <span>SPM</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                <span>Industrial Automations</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-dolly"></i>
+                                <span>Industrial Trolleys</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-hammer"></i>
+                                <span>Fabrications</span>
+                            </a>
+                            <a href="3d-printing.html" class="dropdown-link active">
+                                <i class="fas fa-cube"></i>
+                                <span>3D Printing</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-laser"></i>
+                                <span>Laser Engraving</span>
+                            </a>
+                            <a href="index.html#services" class="dropdown-link">
+                                <i class="fas fa-pencil-ruler"></i>
+                                <span>Designing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#customers" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </a>
+                    
+                    <a href="index.html#projects" class="nav-link">
+                        <i class="fas fa-diagram-project"></i>
+                        <span>Projects</span>
+                    </a>
+                    
+                    <a href="blog.html" class="nav-link">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    
+                    <a href="index.html#contact" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li class="active">3D Printing</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Animation -->
+    <section class="hero-3d" id="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-elements">
+                <div class="printer-animation" id="printerAnimation">
+                    <div class="printer-frame"></div>
+                    <div class="printer-nozzle"></div>
+                    <div class="print-bed"></div>
+                    <div class="print-layers"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">Innovating with 3D Printing</h1>
+                <h2 class="hero-subheadline">From Filaments to Finished Products</h2>
+                <p class="hero-description">Explore our complete range of filaments, printer parts, and advanced resins for professional-grade 3D printing solutions.</p>
+                <div class="hero-cta">
+                    <button class="cta-button primary" onclick="scrollToSection('subcategories')">
+                        <span>Explore Subcategories</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subcategories Section -->
+    <section class="subcategories-section" id="subcategories">
+        <div class="subcategories-container">
+            <div class="section-header">
+                <div class="section-badge">Our Solutions</div>
+                <h2 class="section-title">3D Printing Categories</h2>
+                <p class="section-description">Choose from our comprehensive range of 3D printing materials and components</p>
+            </div>
+
+            <div class="subcategories-grid">
+                <!-- Filaments Card -->
+                <div class="category-card filaments-card" data-category="filaments" onclick="navigateToCategory('filaments.html')">
+                    <div class="card-background"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-tape"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Premium Filaments</h3>
+                        <p class="card-description">High-quality printing materials including PLA, ABS, PETG, TPU, and specialty composites for every application.</p>
+                        <ul class="card-features">
+                            <li>✓ Eco-friendly PLA</li>
+                            <li>✓ Durable ABS</li>
+                            <li>✓ Flexible TPU</li>
+                            <li>✓ Specialty Materials</li>
+                        </ul>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Material Types</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Colors</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Printer Parts Card -->
+                <div class="category-card parts-card featured" data-category="parts" onclick="navigateToCategory('printer-parts.html')">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="card-background"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-cog"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Essential Printer Parts</h3>
+                        <p class="card-description">Precision components for reliable 3D printing including nozzles, extruders, hotends, and mechanical parts.</p>
+                        <ul class="card-features">
+                            <li>✓ Precision Nozzles</li>
+                            <li>✓ Hotend Systems</li>
+                            <li>✓ Stepper Motors</li>
+                            <li>✓ Quality Bearings</li>
+                        </ul>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Components</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Precision</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Resins Card -->
+                <div class="category-card resins-card" data-category="resins" onclick="navigateToCategory('resins.html')">
+                    <div class="card-background"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Advanced Resins</h3>
+                        <p class="card-description">High-performance resins for SLA/DLP printing with exceptional detail, durability, and specialized properties.</p>
+                        <ul class="card-features">
+                            <li>✓ Standard Resin</li>
+                            <li>✓ ABS-like Properties</li>
+                            <li>✓ Water-Washable</li>
+                            <li>✓ Flexible Options</li>
+                        </ul>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Resin Types</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">0.01mm</span>
+                                <span class="stat-label">Precision</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-hover-effect"></div>
+                    <div class="card-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-badge">Why Choose Us</div>
+                <h2 class="section-title">Excellence in 3D Printing</h2>
+                <p class="section-description">We provide comprehensive solutions backed by expertise and quality assurance</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">All materials undergo rigorous quality testing to ensure consistent, professional-grade results.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p class="feature-description">Quick processing and shipping to get your projects moving without delays.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Support</h3>
+                    <p class="feature-description">Technical assistance and guidance from our experienced 3D printing specialists.</p>
+                </div>
+
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Quality Guarantee</h3>
+                    <p class="feature-description">Satisfaction guaranteed with comprehensive warranty on all products and materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-container">
+            <div class="cta-content">
+                <div class="cta-badge">Ready to Start?</div>
+                <h2 class="cta-title">Transform Your Ideas Into Reality</h2>
+                <p class="cta-description">Get in touch with our experts for personalized recommendations and quotes for your 3D printing projects.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button primary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Request Quote</span>
+                    </a>
+                    <a href="tel:+919488590139" class="cta-button secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-badge">Get In Touch</div>
+                    <h2 class="contact-title">Let's Discuss Your 3D Printing Needs</h2>
+                    <p class="contact-description">Our team is ready to help you find the perfect materials and components for your projects.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>karuvi.iyan@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 9488590139</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Support Hours</h4>
+                                <p>24/7 Technical Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-contact-form-container">
+                    <div class="form-header">
+                        <h3 class="form-title">Start Your Project</h3>
+                        <p class="form-subtitle">Tell us about your 3D printing requirements</p>
+                    </div>
+                    
+                    <form class="modern-contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" id="firstName" name="firstName" placeholder=" " required>
+                                <label for="firstName">First Name</label>
+                                <div class="input-border"></div>
+                            </div>
+                            
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" id="lastName" name="lastName" placeholder=" " required>
+                                <label for="lastName">Last Name</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <input type="email" id="email" name="email" placeholder=" " required>
+                                <label for="email">Email Address</label>
+                                <div class="input-border"></div>
+                            </div>
+                            
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <input type="tel" id="phone" name="phone" placeholder=" " required>
+                                <label for="phone">Phone Number</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <input type="text" id="company" name="company" placeholder=" ">
+                                <label for="company">Company (Optional)</label>
+                                <div class="input-border"></div>
+                            </div>
+                            
+                            <div class="select-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <select id="service" name="service" required>
+                                    <option value="">Select Service</option>
+                                    <option value="filaments">Premium Filaments</option>
+                                    <option value="parts">Printer Parts & Components</option>
+                                    <option value="resins">Advanced Resins</option>
+                                    <option value="consultation">Technical Consultation</option>
+                                    <option value="custom">Custom Solutions</option>
+                                    <option value="bulk">Bulk Orders</option>
+                                </select>
+                                <label for="service">Service Type</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-details-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-clipboard-list"></i>
+                                Project Details
+                            </h4>
+                            
+                            <div class="form-row">
+                                <div class="select-wrapper">
+                                    <div class="input-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <select id="timeline" name="timeline" required>
+                                        <option value="">Project Timeline</option>
+                                        <option value="urgent">Urgent (1-3 days)</option>
+                                        <option value="standard">Standard (1-2 weeks)</option>
+                                        <option value="flexible">Flexible (1 month+)</option>
+                                    </select>
+                                    <label for="timeline">Timeline</label>
+                                    <div class="input-border"></div>
+                                </div>
+                                
+                                <div class="select-wrapper">
+                                    <div class="input-icon">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    <select id="budget" name="budget">
+                                        <option value="">Budget Range</option>
+                                        <option value="under-1000">Under ₹1,000</option>
+                                        <option value="1000-5000">₹1,000 - ₹5,000</option>
+                                        <option value="5000-10000">₹5,000 - ₹10,000</option>
+                                        <option value="10000-25000">₹10,000 - ₹25,000</option>
+                                        <option value="25000-plus">₹25,000+</option>
+                                    </select>
+                                    <label for="budget">Budget (Optional)</label>
+                                    <div class="input-border"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="textarea-wrapper">
+                                <div class="input-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <textarea id="message" name="message" placeholder=" " rows="4" required></textarea>
+                                <label for="message">Describe your project requirements, materials needed, quantities, etc.</label>
+                                <div class="input-border"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <div class="consent-wrapper">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">
+                                    I agree to the <a href="#" class="link">Privacy Policy</a> and consent to being contacted about my inquiry.
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="modern-submit-button">
+                                <span class="button-text">Send Message</span>
+                                <div class="button-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div class="button-loading">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KARUVIYAN</span>
+                <p class="footer-tagline">Empowering Innovation</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#customers">Customers</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-social">
+                <a href="mailto:karuvi.iyan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KARUVIYAN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="3d-printing.js"></script>
+</body>
+</html>
